@@ -20,6 +20,10 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
                 <label htmlFor='description'>Description:</label>
                 <textarea onChange={handler} value={ description } type='text' name='description' id='description'></textarea>
             </section>
+            <section>
+                <label htmlFor='artImage'>Photo:</label>
+                <input type='file' onChange={ handler } id='artImage' />
+            </section>
         </section>
     )
 

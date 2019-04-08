@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FEMAChecklist from './FEMAChecklist';
+import Contact from './Contact';
 
 import renderer from 'react-test-renderer';
 
-it('FEMAChecklist renders correctly', () => {
+it('InformationalResources renders correctly', () => {
     const tree = renderer
-    .create(<FEMAChecklist />)
+    .create(<Contact />)
     .toJSON();
     expect(tree).toMatchSnapshot();
 });
