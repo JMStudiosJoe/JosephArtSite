@@ -8,7 +8,6 @@ import { posts_db_name } from '../Utilities/API_utilities'
 
 const postsRouter = Router()
 const s3 = new aws.S3()
-console.log('oooooooo s3 ', s3)
 postsRouter.get('/api/posts', (req, res) => {
     db.getAll(posts_db_name).then(result => {
         return res.json(result)
@@ -19,7 +18,9 @@ postsRouter.get('/api/posts', (req, res) => {
 })
 
 postsRouter.post('/api/posts', function(req, res) {
-    const fileName = req.body.artTitle
+    console.log('do we get to here????', req.body, req.body.image)
+    console.log('req.files', req.files, req.data, req.query)
+    const fileName = req.body.title
     const fileType = 'png'
     const S3_BUCKET = 'josephartimages'
     const s3Params = {
@@ -28,20 +29,22 @@ postsRouter.post('/api/posts', function(req, res) {
         Expires: 60,
         ContentType: fileType,
         ACL: 'public-read'
-      };
-    
-      s3.getSignedUrl('putObject', s3Params, (err, data) => {
+    };
+    console.log('what is gong to s3 ', s3Params)
+    s3.getSignedUrl('putObject', s3Params, (err, data) => {
         if(err){
-          console.log(err);
-          return res.end();
+            console.log(err);
+            return res.end();
         }
+        console.log('WOW MADE IT???', data)
         const returnData = {
-          signedRequest: data,
-          url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+            signedRequest: data,
+            url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
         };
+        console.log('return data', returnData)
         res.write(JSON.stringify(returnData));
         res.end();
-      });
+    });
     // db.insertOne(posts_db_name, req.body).then(response => {
     //     res.status(201).json(response);
     // }).catch(error => {

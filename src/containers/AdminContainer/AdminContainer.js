@@ -17,10 +17,10 @@ function AdminContainer(props) {
         user: {},
         postDetails: {
             description: '',
-            artTitle: '',
+            title: '',
             price: 0.0,
             available: true,
-
+            image: {}
         },
         selectedID: '',
         tabIndex: 0,
@@ -74,13 +74,15 @@ function AdminContainer(props) {
 
     const handleInputChange = (event) => {
         event.preventDefault()
-        const val = event.target.value;
-        const name = event.target.name;
+        const val = event.target.value
+        const name = event.target.name
+        const files = event.target.files ? Array.from(event.target.files) : []
         setAdminState({
             ...adminState,
             postDetails: {
                 ...adminState.postDetails,
                 [name]: val,
+                image: files.length > 0 ? files[0] : {'shoot': 'damn'}
             },
         });
     }
@@ -92,26 +94,7 @@ function AdminContainer(props) {
     }
 
     const validatePostDetails = () => {
-        return Object.keys(adminState.postDetails).reduce( (accumulator, postField) => {
-            if (postField === 'title' && (0 > adminState.postDetails[postField] || adminState.postDetails[postField].length > 0) ) {
-                return {
-                    ...accumulator,
-                    [postField]: `Invalid ${postField}, please re-enter ${postField}`,
-                }
-            } else if (adminState.postDetails[postField].length === 0) {
-                return {
-                    ...accumulator,
-                    [postField]: `Invalid ${postField}, please re-enter valid ${postField}`,
-                }
-            } else if (postField === 'price' && adminState.postDetails[postField] > 0.00) {
-                return {
-                    ...accumulator,
-                    [postField]: `Invalid ${postField}, please re-enter valid ${postField}`,
-                }
-            } else {
-                return accumulator
-            }
-        }, {})
+        return {}
     }
     const handleNewSubmit = (event) => {
         event.preventDefault();
@@ -121,12 +104,19 @@ function AdminContainer(props) {
             description: adminState.postDetails.description,
             price: adminState.postDetails.price,
             available: adminState.postDetails.available,
+            image: adminState.postDetails.image
         }
+        console.log('adminState.postDetails', req)
+        const formData = new FormData()
+        console.log('what is form data', formData)
+        formData.append('postDetails', req)
         const errors = validatePostDetails(req)
-
         if (Object.keys(errors).length === 0) {
             createPost(req).catch( (error) => {
                 console.log('Error creating post', error);
+            })
+            .then(response => {
+                console.log('whats the response', response)
             })
         } else {
             setAdminState({
@@ -156,16 +146,12 @@ function AdminContainer(props) {
     }
     
     const manageEmergency = (postDetails = {}) => {
-        const addressMarkup = getAddressMarkup(postDetails, handleInputChange, true)
-        const contactMarkup = contactDetailsMarkup(postDetails, handleInputChange, true)
         const infoMarkup = postInformationDetails(postDetails, handleInputChange, true)
         const handler = isEditMode ? handleUpdateSubmit : handleNewSubmit
         const buttonLabel = isEditMode ? 'Edit' : 'Create'
         return (
             <div className='create-post-container'>
                 { infoMarkup }
-                { addressMarkup }
-                { contactMarkup }
                 <hr />
                 <button className='submit-post' onClick={handler}>{ buttonLabel }</button>
             </div>

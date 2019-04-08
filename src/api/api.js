@@ -57,7 +57,8 @@ const login = (credentials) => {
 }
 
 const createPost = (postDetails) => {
-    return makeRequest(postDetails, 'POST', '/api/posts').then(response => {
+    console.log('api js post details', postDetails)
+    return makeRequest(postDetails, 'POST', '/api/posts', { 'Content-Type': 'multipart/form-data', ...DefaultHeaders}).then(response => {
         return response.json()
     }).catch(error => {
         return error
