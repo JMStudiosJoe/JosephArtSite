@@ -4,8 +4,6 @@
 
 .DisasterPosts .posts-list-container {
     display: grid;
-    height: 800px;
-    overflow-y: scroll;
     gap: 40px 0;
 }
 
@@ -22,13 +20,9 @@
 .DisasterPosts .posts-list-container .post-details {
     border: solid 1px #bcbcbc;
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr; 
     grid-template-areas: 
-        'disaster-details-area contact-details-area'
-}
-
-.DisasterPosts .posts-list-container .post-details .contact-details {
-    grid-area: contact-details-area;
+        'disaster-details-area'
 }
 
 .DisasterPosts .posts-list-container .post-details .disaster-details {
@@ -38,9 +32,6 @@
     padding: 10px;
 }
 
-.DisasterPosts .posts-list-container .post-details .disaster-details .updates-list {
-    width: 50%;
-}
 
 .DisasterPosts .modal-details {
     display: block;

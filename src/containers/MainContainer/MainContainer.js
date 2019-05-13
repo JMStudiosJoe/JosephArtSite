@@ -49,10 +49,10 @@ class MainContainer extends Component {
                 return <DisasterPosts posts={ posts } />
             }
             case 1: {
-                return <Contact />
+                return <About />
             }
             case 2: {
-                return <About />
+                return <Contact />
             }
             default: {
 

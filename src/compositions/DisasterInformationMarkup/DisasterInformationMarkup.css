@@ -5,26 +5,33 @@
 
 .PostInformationDetails .inform-details {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'image title'
+    'image description';
     gap: 30px;
-}
-
-.PostInformationDetails .inform-details .post-updates {
-    display: grid;
-    grid-auto-rows: 1fr;
-
-}
-
-.PostInformationDetails .inform-details .update-item {
-    font-size: 18px;
-
 }
 
 
 .PostInformationDetails .inform-details .title {
     font-size: 36px;
+    grid-area: title;
+    width: 400px;
+    white-space: nowrap;
+
 }
 
 .PostInformationDetails .inform-details .description {
-    font-size: 24px
+    font-size: 24px;
+    grid-area: description;
+    width: 400px;
+    white-space: nowrap;
+}
+
+.PostInformationDetails .inform-details .post-image {
+    grid-area: image;
+}
+
+.PostInformationDetails .inform-details .post-image img{
+    width: 600px;
+    height: 500px;
 }
