@@ -16,15 +16,17 @@
     font-size: 36px;
     grid-area: title;
     width: 400px;
-    white-space: nowrap;
 
+}
+
+.PostInformationDetails .inform-details .description span {
+    white-space: normal;
 }
 
 .PostInformationDetails .inform-details .description {
     font-size: 24px;
     grid-area: description;
     width: 400px;
-    white-space: nowrap;
 }
 
 .PostInformationDetails .inform-details .post-image {
