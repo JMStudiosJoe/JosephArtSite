@@ -106,10 +106,7 @@ function AdminContainer(props) {
             available: adminState.postDetails.available,
             image: adminState.postDetails.image
         }
-        console.log('adminState.postDetails', req)
         const formData = new FormData()
-        console.log('what is form data', formData)
-        formData.append('postDetails', req)
         const errors = validatePostDetails(req)
         if (Object.keys(errors).length === 0) {
             createPost(req).catch( (error) => {

@@ -13,9 +13,8 @@
     .DisasterPosts .posts-list-container .post-details {
         border: solid 1px red;
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
         grid-template-areas: 
-            'map-area'
             'disaster-details-area'
             'contact-details-area';
     }
@@ -23,18 +22,13 @@
 .DisasterPosts .posts-list-container .post-details {
     border: solid 1px #bcbcbc;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr; 
     grid-template-areas: 
-        'map-area disaster-details-area contact-details-area'
+        'disaster-details-area contact-details-area'
 }
 
 .DisasterPosts .posts-list-container .post-details .contact-details {
     grid-area: contact-details-area;
-}
-
-.DisasterPosts .posts-list-container .post-details .map {
-    grid-area: map-area;
-    border-right: 1px solid #bcbcbc;
 }
 
 .DisasterPosts .posts-list-container .post-details .disaster-details {

@@ -8,8 +8,19 @@ import { posts_db_name } from '../Utilities/API_utilities'
 
 const postsRouter = Router()
 const s3 = new aws.S3()
+const upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: 'josephartimages',
+        key: function (req, file, cb) {
+            console.log('----------------->',file);
+            cb(null, file.originalname); //use Date.now() for unique file keys
+        }
+    })
+});
+
 postsRouter.get('/api/posts', (req, res) => {
-    db.getAll(posts_db_name).then(result => {
+    db.getAll('posts').then(result => {
         return res.json(result)
     }).catch(error => {
         console.log('error getting all Posts', error)
@@ -18,7 +29,7 @@ postsRouter.get('/api/posts', (req, res) => {
 })
 
 postsRouter.post('/api/posts', function(req, res) {
-    console.log('do we get to here????', req.body, req.body.image)
+    console.log('do we get to here????', req.body)
     console.log('req.files', req.files, req.data, req.query)
     const fileName = req.body.title
     const fileType = 'png'
@@ -30,13 +41,14 @@ postsRouter.post('/api/posts', function(req, res) {
         ContentType: fileType,
         ACL: 'public-read'
     };
+    
     console.log('what is gong to s3 ', s3Params)
     s3.getSignedUrl('putObject', s3Params, (err, data) => {
         if(err){
             console.log(err);
             return res.end();
         }
-        console.log('WOW MADE IT???', data)
+        console.log('s3 returned data', data)
         const returnData = {
             signedRequest: data,
             url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`

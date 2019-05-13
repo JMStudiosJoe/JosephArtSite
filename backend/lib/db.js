@@ -21,8 +21,14 @@ class DataBase {
         MongoClient.connect(this.url, (err, dbParam) => {
             assert.equal(null, err)
             console.log('Successfully connected to MongoDB server. ')
-            this.db = dbParam.db('DisasterResponse')
-            
+            this.db = dbParam.db('ArtContent')
+            const data = {
+                title: 'first post',
+                description: 'first description',
+                url: '',
+                available: false,
+            }
+            //this.db.collection('posts').insertOne(data).then(result => console.log('looooooook ----> results', result))
             return;
         })
     }
