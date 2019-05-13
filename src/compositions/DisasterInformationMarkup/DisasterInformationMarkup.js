@@ -2,23 +2,13 @@ import React from 'react'
 
 import './DisasterInformationMarkup.css'
 
-const postInformationDetails = (informDetails = {}, handler = () => {}, buttonHandler = null, edit = false) => {
+const postInformationDetails = (informDetails = {}, handler = () => {}, edit = false) => {
     const {
-        updates,
-        updateItem,
         title,
         description,
+        price,
+        available,
     } = informDetails
-
-    const updatesMarkup = updates && updates.length > 0
-        ? updates.map( (item, index) => {
-            return (
-                <span key={`update-item-${index}`} className='update-item'>{ item }</span>
-            )
-        })
-        : null
-
-    const updatesAddButtonMarkup = buttonHandler ? <button className='add-update-item' onClick={ buttonHandler }>+</button> : null
     
     const editPostDetailsMarkup = (
         <section className='inform-details'>
@@ -30,13 +20,10 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, buttonHa
                 <label htmlFor='description'>Description:</label>
                 <textarea onChange={handler} value={ description } type='text' name='description' id='description'></textarea>
             </section>
-            <section className='post-updates'>
-                <label htmlFor='updateItem'>Notes</label>
-                { updatesAddButtonMarkup }
-                <input onChange={handler} value = { updateItem } type='text' name='updateItem' id='updateItem'/>
-                { updatesMarkup }
+            <section>
+                <label htmlFor='artImage'>Photo:</label>
+                <input type='file' onChange={ handler } id='artImage' />
             </section>
-            
         </section>
     )
 
@@ -47,9 +34,6 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, buttonHa
             </section>
             <section className='description'>
                 <span>{ description }</span>
-            </section>
-            <section className='post-updates'>
-                { updatesMarkup }
             </section>
         </section>
     )

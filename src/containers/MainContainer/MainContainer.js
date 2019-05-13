@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import DisasterPosts from '../../compositions/DisasterPosts/DisasterPosts'
 import { getPosts } from '../../api/api'
-import FEMAChecklist from '../../compositions/FEMAChecklist/FEMAChecklist'
-import InformationalResources from '../../compositions/InfomationalResources/InformationalResources'
+import About from '../../compositions/About/About'
+import Contact from '../../compositions/Contact/Contact'
 
 import './MainContainer.css'
 
@@ -16,7 +16,7 @@ class MainContainer extends Component {
         this.state = {
             posts: [],
             tabIndex: 0,
-            tabs: ['Active Disasters', 'Resources', 'FEMA Checklist'],
+            tabs: ['Gallery', 'About', 'Contact'],
         }
     }
 
@@ -49,10 +49,10 @@ class MainContainer extends Component {
                 return <DisasterPosts posts={ posts } />
             }
             case 1: {
-                return <InformationalResources />
+                return <Contact />
             }
             case 2: {
-                return <FEMAChecklist />
+                return <About />
             }
             default: {
 

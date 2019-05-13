@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import InformationalResources from './InformationalResources';
+import About from './About';
 
 import renderer from 'react-test-renderer';
 
-it('InformationalResources renders correctly', () => {
+it('About renders correctly', () => {
     const tree = renderer
-    .create(<InformationalResources />)
+    .create(<About />)
     .toJSON();
     expect(tree).toMatchSnapshot();
 });
