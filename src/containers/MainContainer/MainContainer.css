@@ -7,6 +7,8 @@
     margin: 40px;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px 30px;
+    border-bottom: thin solid #e0e0e0;
+    color: #e0e0e0;
 }
 .MainContainer .tabNavContainer .tabItem {
     font-size: 36px;
@@ -19,5 +21,5 @@
 }
 
 .MainContainer .tabNavContainer .tabItem:hover {
-    color: rgb(0, 100, 240)
+    color: rgb(83, 136, 211)
 }

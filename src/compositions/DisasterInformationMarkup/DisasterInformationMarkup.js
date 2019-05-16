@@ -8,6 +8,8 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
         description,
         price,
         available,
+        url,
+        orientation,
     } = informDetails
     
     const editPostDetailsMarkup = (
@@ -29,6 +31,9 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
 
     const postDetailsMarkup = (
         <section className='inform-details'>
+            <section className='post-image'>
+                <img className={`${orientation}`} src={ url } />
+            </section>
             <section className='title'>
                 <span>{ title }</span>
             </section>

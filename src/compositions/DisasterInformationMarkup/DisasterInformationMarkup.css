@@ -1,30 +1,51 @@
 .PostInformationDetails {
 
+
 }
 
 
 .PostInformationDetails .inform-details {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'image title'
+    'image description';
     gap: 30px;
-}
-
-.PostInformationDetails .inform-details .post-updates {
-    display: grid;
-    grid-auto-rows: 1fr;
-
-}
-
-.PostInformationDetails .inform-details .update-item {
-    font-size: 18px;
-
+    color: #e0e0e0;
 }
 
 
 .PostInformationDetails .inform-details .title {
     font-size: 36px;
+    grid-area: title;
+    width: 400px;
+
+}
+
+.PostInformationDetails .inform-details .description span {
+    white-space: normal;
 }
 
 .PostInformationDetails .inform-details .description {
-    font-size: 24px
+    font-size: 24px;
+    grid-area: description;
+    width: 400px;
+}
+
+.PostInformationDetails .inform-details .post-image {
+    grid-area: image;
+}
+
+.PostInformationDetails .inform-details .post-image .horizontal {
+    width: 600px;
+    height: 500px;
+}
+
+.PostInformationDetails .inform-details .post-image .vertical {
+    width: 500px;
+    height: 600px;
+}
+
+.PostInformationDetails .inform-details .post-image img {
+    width: 600px;
+    height: 500px;
 }

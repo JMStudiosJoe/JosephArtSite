@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import Navigation from '../../compositions/Navigation/Navigation'
 
-import './App.css'
+import './App.css' // https://makeawebsitehub.com/best-safe-web-fonts-html-css/
 
 class App extends Component {
     render() {
