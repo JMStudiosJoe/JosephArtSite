@@ -1,3 +1,44 @@
 .About {
-    
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    gap: 30px;
+    color: #e0e0e0;
+    grid-template-areas:
+        'about-title-area about-title-area'
+        'about-image-1-area about-para-1-area'
+        'about-image-1-area about-para-2-area'
+        'about-image-1-area about-para-3-area';
+}
+
+.About .about-title {
+    grid-area: about-title-area;
+    font-size: 24px;
+    text-decoration: underline;
+    border-bottom: thin solid #e0e0e0;
+}
+
+.About p {
+    text-indent: 50px;
+    font-size: 18px;
+    white-space: normal;
+    text-align: left;
+}
+
+.About .about-image-1 {
+    grid-area: about-image-1-area;
+    width: 500px;
+    height: 400px;
+}
+
+.About .about-para-1 {
+    grid-area: about-para-1-area;
+}
+
+.About .about-para-2 {
+    grid-area: about-para-2-area;
+}
+
+.About .about-para-3 {
+    grid-area: about-para-3-area;
 }

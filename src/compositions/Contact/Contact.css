@@ -1,4 +1,36 @@
 
 .Contact {
-    
+    display: grid;
+    color: #e0e0e0;
+    grid-template-areas: 
+        'title-area title-area'
+        'instagram-area patreon-area'
+        'email-area email-area';
+
+}
+
+.Contact .title {
+    grid-area: title-area;
+}
+
+.Contact .instagram {
+    grid-area: instagram-area;
+}
+
+.Contact .email {
+    grid-area: email-area;
+}
+
+.Contact .instagram img {
+    width: 60px;
+    height: 60px;
+}
+
+.Contact .patreon {
+    grid-area: patreon-area;
+}
+
+.Contact .patreon img {
+    width: 60px;
+    height: 60px;
 }
