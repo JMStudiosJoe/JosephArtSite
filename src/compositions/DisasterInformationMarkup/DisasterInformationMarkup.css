@@ -1,5 +1,6 @@
 .PostInformationDetails {
 
+
 }
 
 
@@ -9,6 +10,7 @@
     'image title'
     'image description';
     gap: 30px;
+    color: #e0e0e0;
 }
 
 
@@ -33,7 +35,17 @@
     grid-area: image;
 }
 
-.PostInformationDetails .inform-details .post-image img{
+.PostInformationDetails .inform-details .post-image .horizontal {
+    width: 600px;
+    height: 500px;
+}
+
+.PostInformationDetails .inform-details .post-image .vertical {
+    width: 500px;
+    height: 600px;
+}
+
+.PostInformationDetails .inform-details .post-image img {
     width: 600px;
     height: 500px;
 }
