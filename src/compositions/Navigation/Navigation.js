@@ -25,8 +25,8 @@ function NavigationComponent (props) {
             <div>
                 <Switch>
                     <Route exact path='/' component={MainContainer}/>
-                    <Route path='/login' component={LoginComponent}/>
-                    <Route path='/admin:id' post={post} component={AdminContainer}/>
+                    <Route path='/login' component={MainContainer}/>
+                    <Route path='/admin:id' component={MainContainer}/>
                 </Switch>
 
             </div>
