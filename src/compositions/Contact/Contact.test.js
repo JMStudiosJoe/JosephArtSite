@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DisasterPost from './DisasterPost';
+import Contact from './Contact';
 
 import renderer from 'react-test-renderer';
 
-it('DisasterPost renders correctly', () => {
+it('InformationalResources renders correctly', () => {
     const tree = renderer
-    .create(<DisasterPost />)
+    .create(<Contact />)
     .toJSON();
     expect(tree).toMatchSnapshot();
 });

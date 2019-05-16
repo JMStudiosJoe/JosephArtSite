@@ -21,8 +21,7 @@ class DataBase {
         MongoClient.connect(this.url, (err, dbParam) => {
             assert.equal(null, err)
             console.log('Successfully connected to MongoDB server. ')
-            this.db = dbParam.db('DisasterResponse')
-            
+            this.db = dbParam.db('ArtContent')
             return;
         })
     }
@@ -46,7 +45,11 @@ class DataBase {
     updateOneById(collection, obj) {
         const query = { '_id': ObjectID(obj._id) }
         obj._id = ObjectID(obj._id)
-        return this.db.collection(collection).updateOne(query, obj)
+        return this.db.collection(collection).updateOne(query,{
+            $set: obj,
+        }, {
+            upsert: true
+        })
     }
 
     deleteOne(collection, id) {
