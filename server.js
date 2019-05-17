@@ -15,10 +15,10 @@ import { usersRouter } from './backend/routes/userRoutes'
 
 const app = express()
 const publicDir = __dirname + '/public'
-
+const port = process.env === 'production' ? 80 : 8080;
 app.use(bodyParser({limit: '4MB'}))
 app.use(bodyParser.json());
-app.set('port', process.env.PORT || 8080)
+app.set('port', port)
 app.use('/public', express.static('public'))
 app.use(cookieParser())
 app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }))
