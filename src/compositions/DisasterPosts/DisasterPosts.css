@@ -7,16 +7,6 @@
     gap: 40px 0;
 }
 
-@media (max-width: 1000px) {
-    .DisasterPosts .posts-list-container .post-details {
-        border: solid 1px red;
-        display: grid;
-        grid-template-rows: 1fr 1fr; 
-        grid-template-areas: 
-            'disaster-details-area'
-            'contact-details-area';
-    }
-}
 .DisasterPosts .posts-list-container .post-details {
     border: solid 1px #bcbcbc;
     display: grid;
@@ -35,13 +25,13 @@
 
 .DisasterPosts .modal-details {
     display: block;
-    position: relative;
-    margin: auto;
+    position: fixed;
+    top: 150px;
+    margin: 0 auto;
     z-index: 6;
-    width: 60%;
-    height: fit-content;
-    background-color: white;
+    background-color: #6b6b6b;
     text-align: center;
+    padding: 10px;
 }
 
 .DisasterPosts .modal-details .map {

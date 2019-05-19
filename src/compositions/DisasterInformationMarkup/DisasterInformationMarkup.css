@@ -2,23 +2,19 @@
 
 
 }
-
-
 .PostInformationDetails .inform-details {
     display: grid;
     grid-template-areas: 
     'image title'
     'image description';
-    gap: 30px;
+    gap: 10px;
     color: #e0e0e0;
 }
-
 
 .PostInformationDetails .inform-details .title {
     font-size: 36px;
     grid-area: title;
-    width: 400px;
-
+    width: 100%;
 }
 
 .PostInformationDetails .inform-details .description span {
@@ -28,24 +24,53 @@
 .PostInformationDetails .inform-details .description {
     font-size: 24px;
     grid-area: description;
-    width: 400px;
+    width: 100%;
 }
 
 .PostInformationDetails .inform-details .post-image {
     grid-area: image;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .PostInformationDetails .inform-details .post-image .horizontal {
-    width: 600px;
-    height: 500px;
+    width: 100%;
+    height: 90%;
 }
 
 .PostInformationDetails .inform-details .post-image .vertical {
-    width: 500px;
-    height: 600px;
+    width: 90%;
+    height: 100%;
 }
 
 .PostInformationDetails .inform-details .post-image img {
-    width: 600px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+    .PostInformationDetails .inform-details {
+        display: grid;
+        grid-template-areas: 
+        'image image'
+        'title title'
+        'description description';
+        gap: 6px;
+        color: #e0e0e0;
+    }
+    .PostInformationDetails .inform-details .title {
+        font-size: 24px;
+        grid-area: title;
+        width: 100%;
+    }
+    
+    .PostInformationDetails .inform-details .description span {
+        white-space: normal;
+    }
+    
+    .PostInformationDetails .inform-details .description {
+        font-size: 14px;
+        grid-area: description;
+        width: 100%;
+    }
 }

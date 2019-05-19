@@ -26,6 +26,12 @@ body {
     font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
 }
 
+@media only screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+    .App-title {
+        font-size: 2.5em;
+        font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
+    }
+}
 
 
 @keyframes App-logo-spin {
