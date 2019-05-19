@@ -6,7 +6,9 @@
     display: grid;
     grid-template-areas: 
     'image title'
-    'image description';
+    'image description'
+    'image available'
+    'image price';
     gap: 10px;
     color: #e0e0e0;
 }
@@ -24,6 +26,18 @@
 .PostInformationDetails .inform-details .description {
     font-size: 24px;
     grid-area: description;
+    width: 100%;
+}
+
+.PostInformationDetails .inform-details .available {
+    font-size: 24px;
+    grid-area: available;
+    width: 100%;
+}
+
+.PostInformationDetails .inform-details .price {
+    font-size: 24px;
+    grid-area: price;
     width: 100%;
 }
 
@@ -54,7 +68,8 @@
         grid-template-areas: 
         'image image'
         'title title'
-        'description description';
+        'description description'
+        'available price';
         gap: 6px;
         color: #e0e0e0;
     }

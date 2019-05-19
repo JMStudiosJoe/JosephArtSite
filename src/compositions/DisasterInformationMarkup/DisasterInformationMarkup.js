@@ -22,13 +22,26 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
                 <label htmlFor='description'>Description:</label>
                 <textarea onChange={handler} value={ description } type='text' name='description' id='description'></textarea>
             </section>
+            
             <section>
                 <label htmlFor='artImage'>Photo:</label>
                 <input type='file' onChange={ handler } id='artImage' />
             </section>
         </section>
     )
+    const availableMarkup = available
+        ? <section className='available'>
+            <span>Painting is available</span>
+        </section>
+        : <section className='available'>
+            <span>Not available</span>
+        </section>
 
+    const priceMarkup = available
+        ? <section className='price'>
+            <span>{ price }</span>
+        </section>
+        : null
     const postDetailsMarkup = (
         <section className='inform-details'>
             <section className='post-image'>
@@ -40,6 +53,8 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
             <section className='description'>
                 <span>{ description }</span>
             </section>
+            { availableMarkup }
+            { priceMarkup }
         </section>
     )
     const markup = edit ? editPostDetailsMarkup : postDetailsMarkup
