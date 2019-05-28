@@ -9,6 +9,8 @@ function DisasterPosts(props) {
     const defaultState = {
         showModal: false,
         selectedPost: null,
+        filterNav: ['Available', 'All'],
+        filteredPosts: [],
     }
     const [state, setState] = useState(defaultState)
 
@@ -49,16 +51,50 @@ function DisasterPosts(props) {
                 dismissModal={dismissModal} />
     }
 
+    const filterPosts = (filterItem) => {
+        const allPosts = props.posts
+        if (filterItem.toLowerCase() === 'all') {
+            setState({
+                ...state,
+                filteredPosts: allPosts,
+            })
+        }
+        else if (filterItem.toLowerCase() === 'available') {
+            setState({
+                ...state,
+                filteredPosts: allPosts.filter(item => item.available),
+            })
+        }
+        else {
+            setState({
+                ...state,
+                filteredPosts: allPosts,
+            })
+        }
+    }
+
 
     const modalDetails = state.showModal ? getModalDetails() : null
     const backdrop = state.showModal ? <div className='backdrop' onClick={ dismissModal }></div> : null
-    const posts = postsMockup(props.posts, openPostModal)
+    const postsToDisplay = state.filteredPosts.length > 0 ? state.filteredPosts : props.posts
+    const posts = postsMockup(postsToDisplay, openPostModal)
+    const filterNavItems = state.filterNav.map( (filterItem, index) => {
+        return (
+            <span key={`filter-item-${index}`} className='filter-nav-item' onClick={(e) => filterPosts(filterItem)}>{ filterItem }</span>
+        )
+    })
+    const loadingMarkup = <div className='loading-gallery'/>
+    const content = posts.length === 0 ? loadingMarkup : posts
     return (
         <div className='DisasterPosts'>
             { backdrop }
             { modalDetails }
+            <section className='filter-nav'>
+                { filterNavItems }
+            </section>
+            
             <section className='posts-list-container'>
-                { posts }
+                { content }
             </section>
         </div>
     );

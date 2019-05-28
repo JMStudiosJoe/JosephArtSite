@@ -10,6 +10,7 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
         available,
         url,
         orientation,
+        prints,
     } = informDetails
     
     const editPostDetailsMarkup = (
@@ -29,6 +30,12 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
             </section>
         </section>
     )
+    const redbubbleURL = ''
+    const printsMarkup = prints && prints !== '' ? (
+        <div className='prints'>
+            <a href={ prints } target='_blank' >Prints Availalbe: RedBubble</a>
+        </div>
+    ): null
     const availableMarkup = available
         ? <section className='available'>
             <span>Painting is available</span>
@@ -53,6 +60,7 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
             <section className='description'>
                 <span>{ description }</span>
             </section>
+            { printsMarkup }
             { availableMarkup }
             { priceMarkup }
         </section>

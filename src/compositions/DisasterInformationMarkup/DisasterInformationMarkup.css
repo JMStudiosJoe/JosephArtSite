@@ -29,6 +29,14 @@
     width: 100%;
 }
 
+.PostInformationDetails .inform-details .prints {
+
+}
+.PostInformationDetails .inform-details .prints a {
+    color: #e0e0e0;
+    
+}
+
 .PostInformationDetails .inform-details .available {
     font-size: 24px;
     grid-area: available;
