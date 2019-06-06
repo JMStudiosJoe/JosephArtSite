@@ -12,6 +12,7 @@ import cookieParser from 'cookie-parser'
 import { init } from './backend/lib/auth'
 import { postsRouter } from './backend/routes/postsRoutes'
 import { usersRouter } from './backend/routes/userRoutes'
+import { galleriesRouter } from './backend/routes/galleriesRoutes'
 
 const app = express()
 const publicDir = __dirname + '/public'
@@ -24,6 +25,7 @@ app.use(cookieParser())
 app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }))
 app.use(postsRouter)
 app.use(usersRouter)
+app.use(galleriesRouter)
 
 init(app)
 

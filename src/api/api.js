@@ -80,6 +80,14 @@ const getPosts = () => {
     })
 }
 
+const getGalleries = () => {
+    return makeRequest({}, 'GET', '/api/galleries').then(response => {
+        return response.json()
+    }).catch(error => {
+        return error
+    })
+}
+
 export {
     login,
     getPosts,
@@ -87,4 +95,5 @@ export {
     registerUser,
     getUser,
     editPost,
+    getGalleries,
 }

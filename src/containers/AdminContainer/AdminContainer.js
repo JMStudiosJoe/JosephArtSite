@@ -1,13 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
-import moment from 'moment'
 
 import PostContext from '../../context/PostContext'
 import { createPost, editPost, getPosts, getUser } from '../../api/api'
 import DisasterPosts from '../../compositions/DisasterPosts/DisasterPosts'
-import { getAddressMarkup } from '../../components/AddressMarkup/AddressMarkup'
-import { contactDetailsMarkup } from '../../components/ContactMarkup/ContactMarkup'
 import { postInformationDetails } from '../../compositions/DisasterInformationMarkup/DisasterInformationMarkup'
-import { validateEmail } from '../../Utilities/validationUtilities'
 
 require('./AdminContainer.css')
 
@@ -106,7 +102,7 @@ function AdminContainer(props) {
             available: adminState.postDetails.available,
             image: adminState.postDetails.image
         }
-        const formData = new FormData()
+
         const errors = validatePostDetails(req)
         if (Object.keys(errors).length === 0) {
             createPost(req).catch( (error) => {

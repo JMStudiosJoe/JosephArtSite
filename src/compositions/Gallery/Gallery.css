@@ -1,0 +1,44 @@
+.Gallery {
+    display: grid;
+    grid-template-areas: 
+        'image-area name-area name-area name-area'
+        'image-area website-area website-area website-area'
+        'image-area address-area address-area address-area'
+        'image-area city-area state-area zip-area';
+    
+    color: #e0e0e0;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 20px;
+    width: 80%;
+    border: solid thin #e0e0e0;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.Gallery .gallery-image {
+    grid-area: image-area;
+}
+
+.Gallery .name {
+    grid-area: name-area;
+}
+
+.Gallery .website {
+    grid-area: website-area
+}
+
+.Gallery .address {
+    grid-area: address-area;
+}
+
+.Gallery .city {
+    grid-area: city-area;
+}
+
+.Gallery .state {
+    grid-area: state-area;
+}
+
+.Gallery .zipcode {
+    grid-area: zip-area;
+}
