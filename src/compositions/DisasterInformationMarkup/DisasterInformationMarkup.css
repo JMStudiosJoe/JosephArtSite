@@ -11,6 +11,7 @@
     'image price';
     gap: 10px;
     color: #e0e0e0;
+    font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
 }
 
 .PostInformationDetails .inform-details .title {

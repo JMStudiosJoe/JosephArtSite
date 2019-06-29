@@ -12,7 +12,6 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
         orientation,
         prints,
     } = informDetails
-    
     const editPostDetailsMarkup = (
         <section className='inform-details'>
             <section className='title'>
