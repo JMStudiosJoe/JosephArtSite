@@ -1,9 +1,6 @@
 import React from 'react'
 
-import { getAddressMarkup } from '../../components/AddressMarkup/AddressMarkup'
-import { contactDetailsMarkup } from '../../components/ContactMarkup/ContactMarkup'
 import { postInformationDetails } from '../../compositions/DisasterInformationMarkup/DisasterInformationMarkup'
-
 
 
 export default function DisasterPostDetails(props) {
