@@ -7,6 +7,7 @@ body {
 .App {
     text-align: center;
     background-color: #6b6b6b;
+    font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
 }
 
 .App-logo {

@@ -7,6 +7,7 @@ function About(props) {
     return (
         <div className='About'>
             <h2 className='about-title'>About the Artist</h2>
+            <h4 className='artist-mission-statement'>Joseph's Paintings are of stories of a moment grasped, while on a journey through a life.</h4>
             <img className='about-image-1' src={ about1URL } />
             <p className='about-para-1'>
                 Joseph is a hobbyist oil painter with a passion for landscapes and growing into other subjects. Joseph has always enjoyed seeing captivating landscape paintings that would just capture his attention forget what he was doing and soak in the painting, enjoying the moment. Weather it was watching Bob Ross on PBS as a kid or passing by a gallery in town. It was not until the end of summer in 2017 that Joseph tried a few new hobbies, playing guitar, and painting.

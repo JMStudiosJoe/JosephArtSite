@@ -6,6 +6,7 @@
     color: #e0e0e0;
     grid-template-areas:
         'about-title-area about-title-area'
+        'artist-mission-statement-area artist-mission-statement-area'
         'about-image-1-area about-para-1-area'
         'about-image-1-area about-para-2-area'
         'about-image-1-area about-para-3-area';
@@ -16,6 +17,11 @@
     font-size: 24px;
     text-decoration: underline;
     border-bottom: thin solid #e0e0e0;
+}
+
+.About .artist-mission-statement {
+    grid-area: artist-mission-statement-area;
+    font-size: 22px;
 }
 
 .About p {
@@ -54,6 +60,7 @@
         color: #e0e0e0;
         grid-template-areas:
             'about-title-area about-title-area'
+            'artist-mission-statement-area artist-mission-statement-area'
             'about-image-1-area about-image-1-area'
             'about-para-1-area about-para-1-area'
             'about-para-2-area about-para-2-area'
@@ -65,6 +72,10 @@
         font-size: 18px;
         text-decoration: underline;
         border-bottom: thin solid #e0e0e0;
+    }
+
+    .About .artist-mission-statement {
+        font-size: 16px;
     }
     
     .About p {
