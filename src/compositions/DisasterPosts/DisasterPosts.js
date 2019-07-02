@@ -25,8 +25,7 @@ function DisasterPosts(props) {
     }
     
     const postsMockup = (posts, openPostModal) => {
-        return posts.
-        sort( (a, b) => {
+        return posts.sort( (a, b) => {
             return a.order > b.order ? 1 : -1
         }).map( (post, index) => {
             return <DisasterPostDetails key={`post-${index}`} post={post} openPostModal={openPostModal} />;

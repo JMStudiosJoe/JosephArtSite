@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Gallery from '../Gallery/Gallery'
 import './Galleries.css'
 
 function Galleries(props) {
-    const defaultState = {
-    }
-    const [state, setState] = useState(defaultState)
     const galleries = props.galleries
         ? props.galleries
         : []

@@ -15,10 +15,10 @@ function Contact(props) {
         <div className='Contact'>
             <h2 className='title'>Contact the Artist</h2>
             <a className='instagram' href={ instgramURL } target="_blank">
-                <img src={ instgramIconURL } />
+                <img alt='loading' src={ instgramIconURL } />
             </a>
             <a className='patreon' href={ patreonURL } target="_blank">
-                <img src={ patreonIconURL } />
+                <img alt='loading' src={ patreonIconURL } />
             </a>
             <h4 className='email'>Email: { email } <a href={`mailto:${email}`}>Send Mail</a> </h4>
         </div>

@@ -29,7 +29,6 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
             </section>
         </section>
     )
-    const redbubbleURL = ''
     const printsMarkup = prints && prints !== '' ? (
         <div className='prints'>
             <a href={ prints } target='_blank' >Prints Availalbe: RedBubble</a>
@@ -51,7 +50,7 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
     const postDetailsMarkup = (
         <section className='inform-details'>
             <section className='post-image'>
-                <img className={`${orientation}`} src={ url } />
+                <img alt='loading' className={`${orientation}`} src={ url } />
             </section>
             <section className='title'>
                 <span>{ title }</span>

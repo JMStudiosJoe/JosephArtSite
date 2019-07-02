@@ -1,9 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import LoginComponent from '../Login/LoginComponent'
 import MainContainer from '../../containers/MainContainer/MainContainer'
-import AdminContainer from '../../containers/AdminContainer/AdminContainer'
 import PostContext from '../../context/PostContext'
 
 require('./Navigation.css');

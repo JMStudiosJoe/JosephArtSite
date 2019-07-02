@@ -6,7 +6,7 @@ export default function Gallery(props) {
     const { name, address, city, state, zipcode, imgURL, url } = props.gallery
     return (
         <div className='Gallery'>
-            <img className='gallery-image' src={ imgURL }/>
+            <img alt='loading' className='gallery-image' src={ imgURL }/>
             <span className='name'>{ name }</span>
             <a href={ url } target='_blank' className='website' >Website</a>
             <span className='address'>{ address }</span>
