@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
 import DisasterPosts from '../../compositions/DisasterPosts/DisasterPosts'
 import { getPosts, getGalleries } from '../../api/api'

@@ -1,12 +1,8 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import bcrypt from 'bcrypt'
-import fs from 'fs'
 
 import session from 'express-session'
 import _ from 'lodash'
-import errorHandler from 'errorhandler'
-import passport from 'passport'
 import path from 'path'
 import cookieParser from 'cookie-parser'
 import { init } from './backend/lib/auth'

@@ -2,7 +2,7 @@ import React from 'react'
 
 import './DisasterInformationMarkup.css'
 
-const postInformationDetails = (informDetails = {}, handler = () => {}, edit = false) => {
+const editPostInformationDetails = (informDetails = {}, handler = () => {}) => {
     const {
         title,
         description,
@@ -12,7 +12,7 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
         orientation,
         prints,
     } = informDetails
-    const editPostDetailsMarkup = (
+    return (
         <section className='inform-details'>
             <section className='title'>
                 <label htmlFor='title'>title:</label>
@@ -29,6 +29,18 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
             </section>
         </section>
     )
+}
+const postInformationDetails = (informDetails = {}) => {
+    const {
+        title,
+        description,
+        price,
+        available,
+        url,
+        orientation,
+        prints,
+    } = informDetails
+    
     const printsMarkup = prints && prints !== '' ? (
         <div className='prints'>
             <a href={ prints } target='_blank' >Prints Availalbe: RedBubble</a>
@@ -63,10 +75,9 @@ const postInformationDetails = (informDetails = {}, handler = () => {}, edit = f
             { priceMarkup }
         </section>
     )
-    const markup = edit ? editPostDetailsMarkup : postDetailsMarkup
     return (
         <section className='PostInformationDetails'>
-            { markup }
+            { postDetailsMarkup }
         </section>
     )
 }

@@ -75,38 +75,3 @@
     animation: spinner 2s infinite;
 }
 
-
-.DisasterPosts .modal-details {
-    display: block;
-    position: fixed;
-    top: 150px;
-    margin: 0 auto;
-    z-index: 6;
-    background-color: #6b6b6b;
-    text-align: center;
-    padding: 10px;
-}
-
-.DisasterPosts .modal-details .map {
-    display: block;
-    margin: auto;
-    width: 100%;
-    border-bottom: 1px solid #4c4c4c;
-}
-
-.DisasterPosts .modal-details .close-button {
-    position: absolute;
-    top: 6px;
-    right: 10px;
-    font-size: 16px;
-}
-
-.DisasterPosts .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(30, 30, 30, 0.6);
-    z-index: 5;
-}

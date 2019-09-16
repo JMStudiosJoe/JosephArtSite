@@ -1,0 +1,16 @@
+.PostsThumbnailGrid {
+    text-align: center;
+    min-width: 300px;
+    display: grid;
+    grid-auto-rows: 300px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.PostsThumbnailGrid .thumbnail {
+    align-self: center;
+    justify-self: center;
+}
+
+.PostsThumbnailGrid .thumbnail img {
+
+}

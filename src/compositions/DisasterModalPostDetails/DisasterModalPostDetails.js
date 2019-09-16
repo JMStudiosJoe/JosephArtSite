@@ -3,6 +3,8 @@ import React from 'react'
 import { XCircle } from 'react-feather'
 import { postInformationDetails } from '../../compositions/DisasterInformationMarkup/DisasterInformationMarkup'
 
+import './DisasterModalPostDetails.css'
+
 
 export default function DisasterModalPostDetails(props) {
     const post = props.selectedPost
