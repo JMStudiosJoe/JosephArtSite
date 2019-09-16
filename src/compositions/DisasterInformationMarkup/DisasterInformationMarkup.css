@@ -5,11 +5,12 @@
 .PostInformationDetails .inform-details {
     display: grid;
     grid-template-areas: 
-    'image title'
-    'image description'
-    'image available'
-    'image price'
-    'image prints';
+    'title title'
+    'image image'
+    'description description'
+    'available available'
+    'price price'
+    'prints prints';
     gap: 30px;
     color: #e0e0e0;
     font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
@@ -29,6 +30,7 @@
     font-size: 18px;
     grid-area: description;
     width: 100%;
+    margin: 6px;
 }
 
 .PostInformationDetails .inform-details .prints {
