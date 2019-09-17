@@ -3,14 +3,13 @@
 
 }
 .PostInformationDetails .inform-details {
+    margin: 10px;
     display: grid;
     grid-template-areas: 
-    'title title'
-    'image image'
-    'description description'
-    'available available'
-    'price price'
-    'prints prints';
+    'title title title'
+    'image image image'
+    'description description description'
+    'available price prints';
     gap: 30px;
     color: #e0e0e0;
     font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
@@ -64,8 +63,8 @@
 }
 
 .PostInformationDetails .inform-details .post-image .vertical {
-    width: 90%;
-    height: 100%;
+    width: 50%;
+    height: 70%;
 }
 
 .PostInformationDetails .inform-details .post-image img {
@@ -80,7 +79,7 @@
         'image image'
         'title title'
         'description description'
-        'available price';
+        'available price prints';
         gap: 6px;
         color: #e0e0e0;
     }
