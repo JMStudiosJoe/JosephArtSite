@@ -2,8 +2,8 @@ import { Router } from 'express'
 import multer from'multer'
 import multerS3 from'multer-s3'
 import aws from 'aws-sdk'
-import { db } from '../lib/db'
-import { posts_db_name } from '../Utilities/API_utilities'
+import  { PostSchema } from '../graphql/PostsSchema'
+import { graphql } from 'graphql'
 
 
 const postsRouter = Router()
@@ -19,11 +19,9 @@ const upload = multer({
 });
 
 postsRouter.get('/api/posts', (req, res) => {
-    db.getAll(posts_db_name).then(result => {
-        return res.json(result)
-    }).catch(error => {
-        console.log('error getting all Posts', error)
-        return res.status(500).json(error)
+    const query = `query { posts { title, _id, description, order, price, prints, url, thumb, status, orientation }}`
+    graphql(PostSchema, query).then(result => {
+        res.json(result.data.posts)
     })
 })
 

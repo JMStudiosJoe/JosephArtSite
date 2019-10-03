@@ -14,16 +14,17 @@ function MainContainer(props) {
         galleries: [],
         tabIndex: 0,
         tabs: ['Art','Galleries', 'About', 'Contact'],
+        error: false,
     }
     const [state, setState] = useState(defaultState)
 
     useEffect( () => {
-        if (state.posts.length === 0) {
+        if (state.posts.length === 0 && !state.error) {
             getAllActivePosts()
         }
     })
     useEffect( () => {
-        if (state.galleries.length === 0) {
+        if (state.galleries.length === 0 && !state.error) {
             getAllGalleries()
         }
     })
@@ -32,7 +33,17 @@ function MainContainer(props) {
             setState(previousState => {
                 return {
                     ...previousState,
-                    posts: result.length > 0 ? result : []
+                    posts: result.length > 0 ? result : [],
+                    error: false,
+                }
+            })
+        })
+        .catch(error => {
+            setState(previousState => {
+                return {
+                    ...previousState,
+                    galleries: [],
+                    error: true
                 }
             })
         })
@@ -43,7 +54,17 @@ function MainContainer(props) {
             setState(previousState => {
                 return {
                     ...previousState,
-                    galleries: result.length > 0 ? result : []
+                    galleries: result.length > 0 ? result : [],
+                    error: false,
+                }
+            })
+        })
+        .catch(error => {
+            setState(previousState => {
+                return {
+                    ...previousState,
+                    galleries: [],
+                    error: true
                 }
             })
         })

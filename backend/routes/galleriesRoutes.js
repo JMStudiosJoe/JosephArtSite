@@ -1,17 +1,15 @@
 import { Router } from 'express'
-import { db } from '../lib/db'
-import { posts_db_name } from '../Utilities/API_utilities'
+import  { GallerySchema } from '../graphql/GallerySchema'
+import { graphql } from 'graphql'
 
 
 const galleriesRouter = Router()
 
 
 galleriesRouter.get('/api/galleries', (req, res) => {
-    db.getAll('galleries').then(result => {
-        return res.json(result)
-    }).catch(error => {
-        console.log('error getting all galleries', error)
-        return res.status(500).json(error)
+    const query = `query { galleries { name, _id, address, city, state, zipcode, url, imgURL }}`
+    graphql(GallerySchema, query).then(result => {
+        res.json(result.data.galleries)
     })
 })
 

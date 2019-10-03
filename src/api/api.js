@@ -74,7 +74,13 @@ const editPost = (postDetails) => {
 
 const getPosts = () => {
     return makeRequest({}, 'GET', '/api/posts').then(response => {
-        return response.json()
+        if (response.status >= 400) {
+            throw 'bad request'
+        }
+        else {
+            return response.json()
+        }
+        
     }).catch(error => {
         return error
     })
