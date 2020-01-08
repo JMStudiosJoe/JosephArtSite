@@ -9,7 +9,7 @@ function PostsThumbnailGrid (props) {
             return a.order > b.order ? 1 : -1
         }).map( (post, index) => {
             return <div className="thumbnail" key={`thumb-post-${index}`} onClick={(e) => openPostModal(post)} >
-                <img src={post.thumb ? post.thumb : post.url} />
+                <img src={post.thumb ? post.thumb : post.url} alt="loading" />
             </div>
         })
     return (

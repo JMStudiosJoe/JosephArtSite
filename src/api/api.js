@@ -75,16 +75,12 @@ const editPost = (postDetails) => {
 const getPosts = () => {
     return makeRequest({}, 'GET', '/api/posts').then(response => {
         return response.json()
-    }).catch(error => {
-        return error
     })
 }
 
 const getGalleries = () => {
     return makeRequest({}, 'GET', '/api/galleries').then(response => {
         return response.json()
-    }).catch(error => {
-        return error
     })
 }
 

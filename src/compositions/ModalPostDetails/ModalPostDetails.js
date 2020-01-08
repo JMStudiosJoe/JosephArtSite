@@ -1,12 +1,12 @@
 import React from 'react'
 
 import { XCircle } from 'react-feather'
-import { postInformationDetails } from '../../compositions/DisasterInformationMarkup/DisasterInformationMarkup'
+import { postInformationDetails } from '../PostInformationMarkup/PostInformationMarkup'
 
-import './DisasterModalPostDetails.css'
+import './ModalPostDetails.css'
 
 
-export default function DisasterModalPostDetails(props) {
+export default function ModalPostDetails(props) {
     const post = props.selectedPost
     const postDetailsMarkup = postInformationDetails(post)
     const closeButton = <XCircle size={ 60 } className='close-button' onClick={ props.dismissModal } />

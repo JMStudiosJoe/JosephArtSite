@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import DisasterPosts from '../../compositions/DisasterPosts/DisasterPosts'
+import Posts from '../../compositions/Posts/Posts'
 import { getPosts, getGalleries } from '../../api/api'
 import About from '../../compositions/About/About'
 import Contact from '../../compositions/Contact/Contact'
@@ -16,35 +16,49 @@ function MainContainer(props) {
         tabs: ['Art','Galleries', 'About', 'Contact'],
     }
     const [state, setState] = useState(defaultState)
-
+    const [errorState, setErrorState] = useState({})
+    const { posts, galleries, tabs, tabIndex } = state
     useEffect( () => {
         if (state.posts.length === 0) {
             getAllActivePosts()
         }
-    })
+    }, [posts])
     useEffect( () => {
         if (state.galleries.length === 0) {
             getAllGalleries()
         }
-    })
+    }, [galleries])
     const getAllActivePosts = () => {
         getPosts().then(result => {
+            setErrorState({})
             setState(previousState => {
                 return {
                     ...previousState,
                     posts: result.length > 0 ? result : []
                 }
             })
+            
+        }).catch(error => {
+            setErrorState({
+                ...errorState,
+                message: 'Error connecting please try again later.'
+            })
         })
     }
 
     const getAllGalleries = () => {
         getGalleries().then(result => {
+            setErrorState({})
             setState(previousState => {
                 return {
                     ...previousState,
                     galleries: result.length > 0 ? result : []
                 }
+            })
+        }).catch(error => {
+            setErrorState({
+                ...errorState,
+                message: 'Error connecting please try again later.'
             })
         })
     }
@@ -60,7 +74,7 @@ function MainContainer(props) {
     const getActiveTab = (tabIndex, posts, galleries) => {
         switch(tabIndex) {
             case 0: {
-                return <DisasterPosts posts={ posts } />
+                return <Posts posts={ posts } />
             }
             case 1: {
                 return <Galleries galleries={ galleries } />
@@ -77,7 +91,7 @@ function MainContainer(props) {
         }
     }
 
-    const { posts, galleries, tabs, tabIndex } = state
+    
     const inAppNavigation = tabs.map( (tab, index) => {
         const active = index === tabIndex ? 'active': ''
         return (
@@ -89,7 +103,12 @@ function MainContainer(props) {
             { inAppNavigation }
         </div>
     )
-    let activeTab = getActiveTab(tabIndex, posts, galleries)
+    const errorComponent = (
+        <div className="error-message">
+            { errorState.message ? errorState.message : ''}
+        </div>
+    )
+    const activeTab = errorState.message ? errorComponent : getActiveTab(tabIndex, posts, galleries)
     
     return (
         <div className='MainContainer'>

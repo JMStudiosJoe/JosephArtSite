@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DisasterModalPostDetails from './DisasterModalPostDetails';
+import { postInformationDetails } from './PostInformationMarkup';
 
 import renderer from 'react-test-renderer';
 
-it('DisasterModalPostDetails renders correctly', () => {
+it('postInformationDetails renders correctly', () => {
     const tree = renderer
-    .create(<DisasterModalPostDetails />)
+    .create(postInformationDetails())
     .toJSON();
     expect(tree).toMatchSnapshot();
 });

@@ -1,35 +1,7 @@
 import React from 'react'
 
-import './DisasterInformationMarkup.css'
+import './PostInformationMarkup.css'
 
-const editPostInformationDetails = (informDetails = {}, handler = () => {}) => {
-    const {
-        title,
-        description,
-        price,
-        available,
-        url,
-        orientation,
-        prints,
-    } = informDetails
-    return (
-        <section className='inform-details'>
-            <section className='title'>
-                <label htmlFor='title'>title:</label>
-                <input onChange={handler} value={ title } type='text' name='title' id='title'/>
-            </section>
-            <section className='description'>
-                <label htmlFor='description'>Description:</label>
-                <textarea onChange={handler} value={ description } type='text' name='description' id='description'></textarea>
-            </section>
-            
-            <section>
-                <label htmlFor='artImage'>Photo:</label>
-                <input type='file' onChange={ handler } id='artImage' />
-            </section>
-        </section>
-    )
-}
 const postInformationDetails = (informDetails = {}) => {
     const {
         title,

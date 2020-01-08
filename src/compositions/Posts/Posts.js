@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 
-import DisasterPostDetails from '../DisasterPosDetails/DisasterPostDetails'
-import DisasterModalPostDetails from '../DisasterModalPostDetails/DisasterModalPostDetails'
-
+import DisasterModalPostDetails from '../ModalPostDetails/ModalPostDetails'
 import PostsThumbnailGrid from '../PostsThumbnailGrid/PostsThumbnailGrid'
 
-import './DisasterPosts.css'
+import './Posts.css'
 
-function DisasterPosts(props) {
+function Posts(props) {
     const defaultState = {
         showModal: false,
         selectedPost: null,
@@ -23,14 +21,6 @@ function DisasterPosts(props) {
                 showModal: true,
                 selectedPost: post,
             }
-        })
-    }
-    
-    const postsMockup = (posts, openPostModal) => {
-        return posts.sort( (a, b) => {
-            return a.order > b.order ? 1 : -1
-        }).map( (post, index) => {
-            return <DisasterPostDetails key={`post-${index}`} post={post} openPostModal={openPostModal} />;
         })
     }
 
@@ -73,15 +63,6 @@ function DisasterPosts(props) {
             })
         }
     }
-    const thumbsPostsGrid = (posts, openPostModal) => {
-        return posts.sort( (a, b) => {
-            return a.order > b.order ? 1 : -1
-        }).map( (post, index) => {
-            return <div key={`thumb-post-${index}`} onClick={(e) => openPostModal(post)} >
-                <img src={post.thumb ? post.thumb : post.url} />
-            </div>
-        })
-    }
 
     const modalDetails = state.showModal ? getModalDetails() : null
     const backdrop = state.showModal ? <div className='backdrop' onClick={ dismissModal }></div> : null
@@ -95,7 +76,7 @@ function DisasterPosts(props) {
     const loadingMarkup = <div className='loading-gallery'/>
     const content = posts.length === 0 ? loadingMarkup : posts
     return (
-        <div className='DisasterPosts'>
+        <div className='Posts'>
             { backdrop }
             { modalDetails }
             <section className='filter-nav'>
@@ -110,4 +91,4 @@ function DisasterPosts(props) {
     
 }
 
-export default DisasterPosts
+export default Posts

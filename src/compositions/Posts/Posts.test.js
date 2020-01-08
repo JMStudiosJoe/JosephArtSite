@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { postInformationDetails } from './DisasterInformationMarkup';
+import Posts from './Posts';
 
 import renderer from 'react-test-renderer';
 
-it('postInformationDetails renders correctly', () => {
+it('Posts list renders correctly', () => {
     const tree = renderer
-    .create(postInformationDetails())
+    .create(<Posts />)
     .toJSON();
     expect(tree).toMatchSnapshot();
 });

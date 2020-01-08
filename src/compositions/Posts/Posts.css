@@ -1,8 +1,8 @@
-.DisasterPosts {
+.Posts {
     padding: 60px;
 }
 
-.DisasterPosts .filter-nav {
+.Posts .filter-nav {
     margin: 0 auto;
     font-size: 2.5em;
     font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
@@ -12,19 +12,19 @@
     gap: 20px;
 }
 
-.DisasterPosts .filter-nav .filter-nav-item {
+.Posts .filter-nav .filter-nav-item {
     cursor: pointer;
 }
-.DisasterPosts .filter-nav .filter-nav-item:hover {
+.Posts .filter-nav .filter-nav-item:hover {
     color: rgb(83, 136, 211);
 }
 
-.DisasterPosts .posts-list-container {
+.Posts .posts-list-container {
     display: grid;
     gap: 40px 0;
 }
 
-.DisasterPosts .posts-list-container .post-details {
+.Posts .posts-list-container .post-details {
     border: solid 1px #bcbcbc;
     display: grid;
     grid-template-columns: 1fr; 
@@ -32,7 +32,7 @@
         'disaster-details-area'
 }
 
-.DisasterPosts .posts-list-container .post-details .disaster-details {
+.Posts .posts-list-container .post-details .disaster-details {
     grid-area: disaster-details-area;
     border-right: 1px solid #bcbcbc;
     text-align: left;
@@ -64,7 +64,7 @@
     }
 }
 
-.DisasterPosts .posts-list-container .loading-gallery {
+.Posts .posts-list-container .loading-gallery {
     margin: 0 auto;
     color: #e0e0e0;
     border-radius: 50%;
