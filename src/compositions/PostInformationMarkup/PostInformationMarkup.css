@@ -10,13 +10,13 @@
     'image image image'
     'description description description'
     'available price prints';
-    gap: 30px;
+    gap: 20px;
     color: #e0e0e0;
     font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
 }
 
 .PostInformationDetails .inform-details .title {
-    font-size: 36px;
+    font-size: 1.5rem;
     grid-area: title;
     width: 100%;
 }
@@ -26,7 +26,7 @@
 }
 
 .PostInformationDetails .inform-details .description {
-    font-size: 18px;
+    font-size: 14px;
     grid-area: description;
     width: 100%;
     margin: 6px;
