@@ -87,7 +87,7 @@ function Posts(props) {
                 { content }
             </section>
         </div>
-    );
+    )
     
 }
 

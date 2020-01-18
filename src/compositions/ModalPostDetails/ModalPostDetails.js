@@ -13,9 +13,7 @@ export default function ModalPostDetails(props) {
     return (
         <div className='modal-details'>
             { closeButton }
-            <section className='disaster-details'>
-                { postDetailsMarkup }
-            </section>
+            { postDetailsMarkup }
         </div>
     )
 }

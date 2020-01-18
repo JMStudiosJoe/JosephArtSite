@@ -1,5 +1,7 @@
 .Posts {
     padding: 60px;
+    display: grid;
+    grid-template-rows: 100px 1fr;
 }
 
 .Posts .filter-nav {
@@ -12,6 +14,9 @@
     gap: 20px;
 }
 
+.Posts .modal-details .PostInformDetails {
+    background-color: #6b6b6b;
+}
 .Posts .filter-nav .filter-nav-item {
     cursor: pointer;
 }
@@ -27,7 +32,7 @@
 .Posts .posts-list-container .post-details {
     border: solid 1px #bcbcbc;
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-areas: 
         'disaster-details-area'
 }
