@@ -10,10 +10,10 @@ function Posts(props) {
         showModal: false,
         selectedPost: null,
         filterNav: ['Available', 'All'],
-        filteredPosts: [],
+        filteredPosts: props.posts.filter(item => item.available),
     }
     const [state, setState] = useState(defaultState)
-    const { filterNavTab = 0 } = state
+    const { filterNavTab = 1 } = state
     const openPostModal = (post) => {
         setState(previousState => {
             return {
