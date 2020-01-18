@@ -13,7 +13,7 @@ function Posts(props) {
         filteredPosts: [],
     }
     const [state, setState] = useState(defaultState)
-
+    const { filterNavTab = 0 } = state
     const openPostModal = (post) => {
         setState(previousState => {
             return {
@@ -47,12 +47,14 @@ function Posts(props) {
         if (filterItem.toLowerCase() === 'all') {
             setState({
                 ...state,
+                filterNavTab: 1,
                 filteredPosts: allPosts,
             })
         }
         else if (filterItem.toLowerCase() === 'available') {
             setState({
                 ...state,
+                filterNavTab: 0,
                 filteredPosts: allPosts.filter(item => item.available),
             })
         }
@@ -70,7 +72,7 @@ function Posts(props) {
     const posts = <PostsThumbnailGrid posts={ postsToDisplay } openPostModal={openPostModal} />
     const filterNavItems = state.filterNav.map( (filterItem, index) => {
         return (
-            <span key={`filter-item-${index}`} className='filter-nav-item' onClick={(e) => filterPosts(filterItem)}>{ filterItem }</span>
+            <span key={`filter-item-${index}`} className={`filter-nav-item ${index === filterNavTab ? 'active' : '' } `} onClick={(e) => filterPosts(filterItem)}>{ filterItem }</span>
         )
     })
     const loadingMarkup = <div className='loading-gallery'/>

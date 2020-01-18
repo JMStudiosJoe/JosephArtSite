@@ -20,6 +20,11 @@
 .Posts .filter-nav .filter-nav-item {
     cursor: pointer;
 }
+
+.Posts .filter-nav .filter-nav-item.active {
+    color: rgb(83, 136, 211);
+    text-decoration: underline;
+}
 .Posts .filter-nav .filter-nav-item:hover {
     color: rgb(83, 136, 211);
 }
