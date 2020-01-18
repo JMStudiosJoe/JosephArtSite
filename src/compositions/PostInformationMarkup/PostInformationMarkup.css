@@ -55,6 +55,7 @@
     grid-area: image;
     margin: 0 auto;
     text-align: center;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, .3);
 }
 
 .PostInformationDetails .inform-details .post-image .horizontal {
