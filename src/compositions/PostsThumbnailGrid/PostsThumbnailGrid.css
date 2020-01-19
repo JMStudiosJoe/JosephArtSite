@@ -17,6 +17,7 @@
     max-height: 15rem;
     transition: 0.3s;
     box-shadow: 6px 6px 12px rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .3);
 }
 .PostsThumbnailGrid .thumbnail .thumbnail-details {
     position: absolute;
