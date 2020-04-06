@@ -1,13 +1,10 @@
 import React from 'react'
 
-
 import './Contact.css'
-
-
 
 function Contact(props) {
     const email = 'jrichardson@jmstudios.net'
-    const instgramURL = 'https://www.instagram.com/eviljoester/'
+    const instgramURL = 'https://www.instagram.com/artofjosephr/'
     const instgramIconURL = 'https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=300'
     const patreonURL = 'https://www.patreon.com/artofjoseph'
     const patreonIconURL = 'http://www.stickpng.com/assets/images/5a5a6b7d14d8c4188e0b0888.png'
