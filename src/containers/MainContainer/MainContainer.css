@@ -5,7 +5,7 @@
 .MainContainer .tabNavContainer {
     display: grid;
     margin: 40px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px 30px;
     border-bottom: thin solid #e0e0e0;
     color: #e0e0e0;

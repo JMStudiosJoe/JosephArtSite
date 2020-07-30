@@ -1,0 +1,38 @@
+.Home {
+    padding: 30px;
+    display: grid;
+    grid-template-areas:
+        'title-area title-area'
+        'quote-one-area featured-art-area'
+        'quote-two-area featured-post-area';
+    gap: 30px;
+    color: #e5e5e5;
+}
+
+.Home .title {
+    grid-area: title-area;
+}
+
+.Home .quote-one {
+    grid-area: quote-one-area;
+    align-self: center;
+    font-size: 24px;
+}
+.Home .quote-two {
+    grid-area: quote-two-area;
+    text-align: left;
+    align-self: center;
+    justify-self: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 600px;
+}
+.Home .featured-art {
+    grid-area: featured-art-area;
+    width: 100%;
+}
+
+.Home .featured-post {
+    grid-area: featured-post-area;
+    width: 100%;
+}

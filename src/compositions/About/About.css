@@ -7,8 +7,11 @@
     grid-template-areas:
         'about-title-area about-title-area'
         'artist-mission-statement-area artist-mission-statement-area'
+        'quote-gap-one quote-gap-one'
         'about-image-1-area about-para-1-area'
+        'about-image-1-area quote-gap-one-area'
         'about-image-1-area about-para-2-area'
+        'about-image-2-area quote-gap-two-area'
         'about-image-2-area about-para-3-area';
 }
 
@@ -18,7 +21,12 @@
     text-decoration: underline;
     border-bottom: thin solid #e0e0e0;
 }
-
+.About .quote-gap-one {
+    grid-area: quote-gap-one-area;
+}
+.About .quote-gap-two {
+    grid-area: quote-gap-two-area;
+}
 .About .artist-mission-statement {
     grid-area: artist-mission-statement-area;
     font-size: 22px;

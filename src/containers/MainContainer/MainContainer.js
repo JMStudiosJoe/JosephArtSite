@@ -5,6 +5,7 @@ import { getPosts, getGalleries } from '../../api/api'
 import About from '../../compositions/About/About'
 import Contact from '../../compositions/Contact/Contact'
 import Galleries from '../../compositions/Galleries/Galleries'
+import Home from '../../compositions/Home/Home'
 
 import './MainContainer.css'
 
@@ -13,7 +14,7 @@ function MainContainer(props) {
         posts: [],
         galleries: [],
         tabIndex: 0,
-        tabs: ['Art','Galleries', 'About', 'Contact'],
+        tabs: ['Home', 'Art','Galleries', 'About', 'Contact'],
     }
     const [state, setState] = useState(defaultState)
     const [errorState, setErrorState] = useState({})
@@ -74,19 +75,22 @@ function MainContainer(props) {
     const getActiveTab = (tabIndex, posts, galleries) => {
         switch(tabIndex) {
             case 0: {
-                return <Posts posts={ posts } />
+                return <Home />
             }
             case 1: {
-                return <Galleries galleries={ galleries } />
+                return <Posts posts={ posts } />
             }
             case 2: {
-                return <About />
+                return <Galleries galleries={ galleries } />
             }
             case 3: {
+                return <About />
+            }
+            case 4: {
                 return <Contact />
             }
             default: {
-
+                return <Home />
             }
         }
     }

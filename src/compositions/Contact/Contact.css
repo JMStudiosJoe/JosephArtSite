@@ -28,9 +28,17 @@
 
 .Contact .patreon {
     grid-area: patreon-area;
+    grid-template-areas: 
+        'logo-img-area posts-area'
+        'logo-img-area coaching-statement-area';
 }
 
 .Contact .patreon img {
+    grid-area: logo-img-area;
     width: 60px;
     height: 60px;
+}
+
+.Contact .patreon .coaching-statement {
+    
 }
